@@ -13,7 +13,7 @@ connectionLimit: 30,
         host: 'localhost',
         user: 'root',
         password: 'root',
-        database: 'donor',
+        database: 'mydb',
         debug: false,
         wait_timeout: 28800,
         multipleStatements: true
