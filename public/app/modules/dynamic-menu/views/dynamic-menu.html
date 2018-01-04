@@ -1,0 +1,20 @@
+<div class="nav-bg" ng-init="mobileviewanimated = false; mobilelogout = false; shortlistopen = false; searchesopen = false;">
+ 
+    <header id="header" ng-controller="DynamicMenuController" ng-show="display">  
+        <div class="header-container">
+            <div class="header">
+                <div class="header-logo-box"> 
+                    <!--<a class="logo" href="#app/">-->
+                    <img ng-if="logo" ng-src="images/{{logo}}/logo.png" alt="LOGO" class="img-responsive"  onerror="this.src = 'images/default/logo.png'">
+                    <!--</a>-->
+                </div>
+            </div>
+        </div>
+        <div class="nav-container" ng-if="currentUser">
+		Hi {{currentUser.fullname}},
+		<br> <a href="#app/login" ng-click="logout()">
+                                            <i class="fa fa-power-off" aria-hidden="true"></i>Click here to Logout</a>
+ 	
+		</div>
+		</header>
+    </div>

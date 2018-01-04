@@ -1,0 +1,113 @@
+<div class="container">
+    <div class="main-container  col2-left-layout">
+        <div class="main mt10">
+            <div class="main-userddetails profiledetails">
+                <div class="col-main" id="content">
+                    <div class="p10">
+                        <div class="page-headding">
+                            <h1><span>Edit Details</span></h1>
+                        </div>
+                        <ol class="one-page-checkout" id="checkoutSteps">
+                            <li id="opc-billing" class="section allow active custom_login_input_box">    
+                                <div id="checkout-step-billing" class="step a-item" ng-init="getUserDetail()" ng-init="disableClick = false">
+                                    <div id="content">     
+                                        <form class="form-horizontal" ng-submit="!disableClick && callFormFunc()" role="form" name="profileForm" id="profileForm" novalidate>  
+                                            <fieldset id="account">
+                                                <div class="form-group required" ng-class="{ 'has-error' : (formValidation && profileForm.firstname.$error.required) || (profileForm.firstname.$dirty && profileForm.firstname.$error.required)}">
+                                                    <label class="col-sm-3 control-label" for="input-firstname">First Name</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="firstname" value="" placeholder="First Name" id="firstname" ng-model="signUpData.firstname" required="" class="form-control" capitalize-first maxlength="100">
+                                                        <div class="text-danger" ng-show="(formValidation && profileForm.firstname.$error.required) || (profileForm.firstname.$dirty && profileForm.firstname.$error.required)" >{{'First name is required'}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group ">
+                                                    <label class="col-sm-3 control-label" for="middlename">&nbsp;&nbsp;Middle Name</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder="Middle Name" name="middlename" id="middlename" ng-model="signUpData.middlename" class="form-control" capitalize-first maxlength="100">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group required" ng-class="{ 'has-error' : (formValidation && profileForm.lastname.$error.required) || (profileForm.lastname.$dirty && profileForm.lastname.$error.required)}">
+                                                    <label class="col-sm-3 control-label" for="input-lastname">Last Name</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" value="" placeholder="Last Name" name="lastname" id="lastname" ng-model="signUpData.lastname" required="" class="form-control" capitalize-first maxlength="100">
+                                                        <div class="text-danger" ng-show="(formValidation && profileForm.lastname.$error.required) || (profileForm.lastname.$dirty && profileForm.lastname.$error.required)" >{{'Last name is required'}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group required" ng-class="{ 'has-error' : (formValidation && (profileForm.username.$error.required || profileForm.username.$error.pattern)) || (profileForm.username.$dirty &&(profileForm.username.$error.required || profileForm.username.$error.pattern))}">
+                                                    <label class="col-sm-3 control-label" for="input-email">E-Mail</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" placeholder="Username/Email" name="username" ng-class="{ 'has-error' : profileForm.username.$invalid }" ng-disabled="true" id="username" ng-model="signUpData.username" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/"  required="" class="form-control">
+                                                        <div class="text-danger" ng-show="(formValidation && profileForm.username.$error.required) || (profileForm.username.$dirty && profileForm.username.$error.required)">{{'Email is required'}} </div>
+                                                        <div class="text-danger" ng-show="(formValidation && profileForm.username.$error.pattern) || (profileForm.username.$dirty && profileForm.username.$error.pattern)" >{{'Not valid email'}} </div>             
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group " >
+                                                    <label class="col-sm-3 control-label" for="input-telephone">&nbsp;&nbsp;Telephone</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder="Contact No." minlength="0" maxlength="20" name="contactno" id="contactno" ng-model="signUpData.contactno"  class="form-control">
+                                                       
+                                                    </div>
+                                                </div>
+
+                                            </fieldset>
+
+                                            <fieldset>
+
+                                                <div class="form-group required" ng-class="{ 'has-error' : (formValidation && (profileForm.password.$error.required || profileForm.password.$error.minlength ||  profileForm.password.$error.pattern)) || (profileForm.password.$dirty &&(profileForm.password.$error.required || profileForm.password.$error.pattern))}">
+                                                    <label class="col-sm-3 control-label" for="input-password">Password</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="password" placeholder="Password" name="password" id="password" ng-model="signUpData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required class="form-control">
+                                                        <div class="text-danger" ng-show="(formValidation && profileForm.password.$error.required) || (profileForm.password.$dirty && profileForm.password.$error.required)" >{{'Password is required'}} </div>
+                                                        <div class="text-danger" ng-show="(formValidation &&(profileForm.password.$error.minlength || profileForm.password.$error.pattern)) || (profileForm.password.$dirty && (profileForm.password.$error.minlength || profileForm.password.$error.pattern))" >{{'Must be 8 characters and contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)'}}</div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group required" ng-class="{ 'has-error' : (formValidation && profileForm.confirmpassword.$error.required) || (profileForm.confirmpassword.$dirty && profileForm.confirmpassword.$error.required)}">
+                                                    <label class="col-sm-3 control-label" for="input-confirm">Confirm Password</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" ng-model="signUpData.password_c" required="" class="form-control">
+                                                        <div class="text-danger" ng-show="(formValidation && profileForm.confirmpassword.$error.required) || (profileForm.confirmpassword.$dirty && profileForm.confirmpassword.$error.required)" >{{'Confirm password is required'}} </div>
+                                                        <div class="text-danger" ng-show="(profileForm.confirmpassword.$touched && profileForm.confirmpassword.$viewValue != '' && profileForm.confirmpassword.$viewValue !== profileForm.password.$viewValue)" >{{'Password mismatch'}}</div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+                                            <div class="buttons col-sm-8">
+                                                <div class="pull-right ">
+                                                    <button id="buttonsubmit" type="submit" ng-click="formValidation=true" class="btn btn-primary"> Save Profile </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt30"></div>                         
+                </div>
+            </div>
+
+<div class="col-left sidebar profileimg text-center edit-profile">
+    <div id="column-left">
+                    <div class="product-box ng-isolate-scope">
+                        <div class="product-details mb30 mt30">
+                            <div class="image">
+                                <a ng-click="openFileUpload()" class="product-image">
+                                <img ng-src="{{signUpData.image_source}}" fallbacksrc="{{signUpData.alt_image_source}}" error-img="images/userdefault.png" class="img-responsive  img-rounded  ng-scope" ><!-- end ngIf: userd.pic_name --> 
+                                </a> 
+                                <input type="file" id="imguptrigger" name="imguptrigger" ng-file-select="onFileSelect($files)" file-Model="myFile" class="display-override" accept="image/*">
+                                <div class="button-box">
+                                    <a class="quickview-button" ng-click="openFileUpload()"><span>&nbsp;Update Profile Picture</span></a>
+                                </div>                            
+
+                            </div>
+                        </div>
+                    </div>                 
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+
+        </div>
+    </div>
+</div>

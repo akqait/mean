@@ -1,0 +1,455 @@
+
+.connected {
+    text-align:center;
+    display: block;
+    margin:0px auto;
+    width: 100%;
+    height: 5px;
+    color: #637277;
+}
+.connected h2 {
+    padding-top: 20px;
+}
+.infoConnected {
+    text-align: left;
+    float: right;
+}
+#creatorImage {
+    float: left;
+    margin: 90px 0 0 140px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#senderName {
+    float:left;
+    padding-left:10px;
+    width: 150px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    background-color: #f0f1f3;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    margin-bottom:20px;
+    overflow: hidden;
+}
+#senderId {
+    float:left;
+    padding-left: 10px;
+    width: 200px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    background-color: #f0f1f3;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    margin-bottom:40px;
+}
+#senderEnter {
+    float:left;
+    width: 110px;
+    height: 40px;
+    text-align:center;
+    background-color: #73b4d4;
+    border: none;
+    box-shadow: 3px 3px 3px #efedee;
+    border-radius: 2px;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+    visibility: hidden
+}
+.personinside {
+    text-align:center;
+    display: block;
+    margin:0px auto;
+    width: 100%;
+    color: #637277;
+}
+.personinside h2 {
+    padding-top: 20px;
+    width: 210px;
+    overflow: hidden;
+}
+.infoInside {
+    text-align: left;
+    float: right;
+}
+#ownerImage {
+    float: left;
+    margin: 90px 0 0 140px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+#receiverName {
+    float:left;
+    padding-left:10px;
+    width: 150px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    background-color: #f0f1f3;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    margin-bottom:20px;
+}
+#receiverId {
+    float:left;
+    padding-left: 10px;
+    width: 200px;
+    height: 30px;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    background-color: #f0f1f3;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    margin-bottom:40px;
+}
+#receiverEnter {
+    float:left;
+    width: 110px;
+    height: 40px;
+    text-align:center;
+    background-color: #73b4d4;
+    border: none;
+    box-shadow: 3px 3px 3px #efedee;
+    border-radius: 2px;
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+    visibility: hidden;
+}
+.invite-textfield {
+    text-align:center;
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+    color: #637277;
+}
+.invite-textfield h2 {
+    padding-top: 80px;
+}
+.invite-textfield h5 {
+    font-weight: normal;
+    margin: 10px 0 35px;
+}
+.invite-textfield .link {
+    width: 600px;
+    height: 35px;
+    text-align:center;
+    display: block;
+    margin:0px auto;
+    padding-top: 15px;
+    margin-bottom:120px;
+}
+.invite-textfield #link{
+    text-decoration: none;
+    color: #637277;
+}
+.left {
+    text-align:center;
+    display: block;
+    margin:0px auto;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow:0px 3px 3px #e3e4e6;
+    color: #637277;
+}
+.left h2 {
+    padding-top: 50px;
+    padding-bottom: 6px;
+}
+.left h5 {
+    font-weight: normal;
+    margin-bottom: 100px;
+}
+#leftImage {
+    float: left;
+    margin: 90px 0 0 140px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.nickname-left {
+    width: 40px;
+    overflow: hidden;
+}
+.toomanypeople {
+    text-align:center;
+    display: block;
+    margin:0px auto;
+    width: 750px;
+    height: 30px;
+    color: #637277;
+}
+.toomanypeople h2 {
+    padding-top: 100px;
+    padding-bottom: 8px;
+}
+.toomanypeople h5 {
+    font-weight: normal;
+    margin-bottom: 100px;
+}
+#room:visited {
+    color: #88bfd4;
+}
+.nomessages {
+    text-align:center;
+    display: block;
+    margin:0px auto;
+    width: 100%;
+    height: 30px;
+
+    color: #637277;
+}
+.nomessages h2 {
+    padding-top: 50px;
+    overflow: hidden;
+    padding-bottom: 6px;
+}
+.nomessages h5 {
+    font-weight: normal;
+    margin-bottom: 100px;
+}
+
+#noMessagesImage {
+    float: left;
+    margin: 90px 0 0 140px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.info {
+    text-align: center;
+    width: 283px;
+    overflow: hidden;
+}
+.nickname-chat {
+    overflow: hidden;
+}
+.chats {
+    list-style-type: none;
+    margin-top:10px;
+}
+.offlinechats {
+    list-style-type: none;
+    margin-top:10px;
+}
+.me {
+    clear:both;
+    float:right;
+    margin-bottom:10px;
+}
+.me .image{
+    float:right;
+    margin-right:10px;
+}
+.you {
+    clear:both;
+    float:left;
+    margin-bottom:10px;
+}
+.you .image{
+    float:left;
+    margin-left: 10px;
+}
+.chats .me p  , .offlinechats .me p{
+    text-align:left;
+    margin-right:10px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom:10px;
+    padding: 5px 5px;
+    max-width:230px;
+    min-height: 10px;
+    font-size:14px;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px #E3E4E6;
+    color: #637277;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+.chats .you p , .offlinechats .you p{
+    text-align:left;
+    margin-left:10px;
+    display: inline-block;
+    margin-right:10px;
+    margin-bottom:10px;
+    padding: 5px 5px;
+    max-width:230px;
+    min-height: 10px;
+    font-size:14px;
+    background-color: #FFF;
+    border-radius: 3px;
+    box-shadow: 0px 3px 3px #E3E4E6;
+    color: #637277;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+.image b {
+    overflow: hidden;
+    display: block;
+    clear: both;
+    padding-top: 7px;
+}
+.image i{
+    font-size: 12px;
+    line-height: 1.2;
+    display: block;
+    opacity: 0.8;
+    padding-top: 4px;
+}
+chatfooter {
+    width:283px;
+    padding-top: 30px;
+    background-color: white;
+    height: 130px;
+}
+#chatform {
+    width:298px;
+    margin: 0 auto;
+    background-color: white;
+    bottom:31px;
+    position: fixed;
+}
+#message {
+    width: 256px;
+    height: 36px;
+    display: block;
+    float:left;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding-left: 20px;
+    /*padding-top: 20px;*/
+    resize: none;
+    font:inherit;
+    color:inherit;
+    overflow-y: hidden;
+}
+#submit {
+    width: 42px;
+    height: 36px;
+    float:right;
+    text-align:center;
+    background-color: #01a8e6;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 2px;
+    color:white;
+    font-weight: bold;
+    font-size: 17px;
+    outline: none;
+    cursor:pointer;
+}
+.connected {
+    display: none;
+}
+.personinside {
+    display: none;
+}
+.invite-textfield {
+    display:none;
+}
+.left {
+    display:none;
+}
+.toomanypeople {
+    display:none;
+}
+.nomessages{
+    display:none;
+}
+chatfooter {
+    display:none;
+}
+.chatscreen{
+    display:none;
+    width:700px;
+    margin: 0 auto 40px;
+    overflow:hidden;
+}
+.oldchat{
+    width:100%;
+    overflow:hidden;
+    margin-top:10px;
+}
+.chatWindow{
+    overflow-y:hidden;
+    overflow-x:hidden;
+    height: inherit;
+}
+.timesent{
+    opacity:0.4;
+    font-size: 12px;
+}
+#offmess, #leftmsg{
+    width: 256px;
+    height: 36px;
+    display: block;
+    float:left;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    padding-left: 20px;
+    resize: none;
+    font:inherit;
+    color:inherit;
+    overflow-y: hidden;
+}
+.speech-bubble-me {
+    position: relative;
+    background: #ffffff;
+    border-radius: .4em;
+}
+.speech-bubble-me:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0;
+    top: 50%;
+    height: 0;
+    border: 9px solid transparent;
+    border-left-color: #ffffff;
+    border-right: 0;
+    border-bottom: 0;
+    margin-top: -4.5px;
+    margin-right: -9px;
+}
+.speech-bubble-you {
+    position: relative;
+    background: #ffffff;
+    border-radius: .4em;
+}
+.speech-bubble-you:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-right-color: #ffffff;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: -4.5px;
+    margin-left: -9px;
+}
+#offlinechatform {
+    width:298px;
+    margin: 0 auto;
+    background-color: white;
+    bottom:31px;
+    position: fixed;
+    border-radius: 5px
+}

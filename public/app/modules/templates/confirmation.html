@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h3 class="modal-title modalFormHeadSection" id="modal-title">Confirm</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+    <div class="row">
+        
+        <div class="col-sm-12 ">  
+            You have unsaved changes in search, go back and click Save Search in left to save your changes or click cancel to discard?
+        </div>
+        <div class="mt10"></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="cancel()">Go back</button>
+    <a class="btn btn-cancel" type="button" href="{{nextPath}}" ng-click="nextAction()">Cancel</a>
+</div>
+
+

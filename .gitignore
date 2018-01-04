@@ -1,0 +1,4 @@
+/public/app/apidoc
+/node_modules
+/*.bat
+/public/app/apidoctemplate

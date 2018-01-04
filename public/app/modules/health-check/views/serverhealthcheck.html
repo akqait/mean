@@ -1,0 +1,93 @@
+<link href="/css/bootstrap.min.css" rel="stylesheet" id="bootstrapcss"> 
+<style>
+    .brightgreen{
+        color:#85b930;
+    }
+</style>
+<div class="container" >
+    <p></p>
+    <div class="jumbotron row">
+        <div ng-hide="loggedin">
+            <form ng-submit="healthCheckLogin()" class="col-sm-6 col-sm-offset-3">
+                <div class="text-center text-primary input-group">
+                    <h2><b>Server Health Check Login</b></h2>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="email">Username :</label>
+                    <input type="text" class="form-control" id="email" autocomplete="off" ng-model="username" placeholder="Username" />
+                </div>
+                <div class="form-group">
+                    <label for="password">Password :</label>
+                    <input type="password" class="form-control" id="password" autocomplete="off" ng-model="password" placeholder="Password" />
+                </div>
+                <button id="buttonlogin" class="btn btn-primary" >Login</button> <br />
+
+            </form>
+            <div class="text-danger col-sm-12 text-center"><h4>{{loginError}}</h4></div>
+        </div>
+
+        <div class="col-sm-6 col-sm-offset-3 text-primary text-center">
+            <h2><b>{{error}}</b></h2>
+        </div>
+        
+        <div  ng-show="loggedin && !error">
+            <div class="col-sm-4">
+                <br /><br /><br /><br />
+                <img src="images/server.jpg" height="300" width="300"/>
+            </div>
+            <div class="col-sm-8">
+                <div class="text-primary input-group">
+                        <h1><img src="images/loadingimg.png" height="100" width="100" class=""/>&nbsp;<b>Health Check</b>   
+                        </h1> 
+                </div>
+                <div><h4>Database Status</h4></div>
+                <div>
+                    <div>
+                        <ul>
+                            <li ng-if="mysqlStatus" class="row list-unstyled"><b class="col-sm-4">MySQL Status - </b><b><span class="col-sm-5" ng-class="{'text-danger':mysqlStatus !== 'Connected', 'brightgreen':mysqlStatus === 'Connected'}">{{mysqlStatus}}</span></b></li>
+                            <li ng-if="mongoStatus" class="row list-unstyled"><b class="col-sm-4">MongoDB Status - </b><b><span class="col-sm-5" ng-class="{'text-danger':mongoStatus !== 'Connected', 'brightgreen':mongoStatus === 'Connected'}">{{mongoStatus}}</span></b></li>
+                        </ul>
+                    </div>
+                    <div><h4>Disk Space</h4></div>
+                    <div class="table-responsive">   
+                    <table class="table table-striped table-bordered">
+                        <thead class="btn-primary disabled">
+                        <tr>
+                        <th>
+                            Disk Name
+                        </th>
+                        <th>
+                            Free Space <span> (GB)</span>
+                        </th>
+                        <th>
+                            Used Space <span> (GB)</span>
+                        </th>
+                        <th>
+                            Total Space <span>(GB)</span>
+                        </th>
+                        <th>
+                            Used Percentage
+                        </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--(disk.diskname.indexof('dev') && disk.free < 1)-->
+                        <tr ng-repeat="disk in diskSpace " >
+                            
+                            <td ng-class="{'text-danger':(disk.diskname.indexOf('dev')!==-1 && disk.free < 1)}">{{disk.diskname}}</td>
+                            <td>{{disk.free}}</td>
+                            <td>{{disk.used}}</td>
+                            <td>{{disk.size}}</td>
+                            <td>{{disk.usedPercent}}%</td>
+                        </tr>
+                        </tbody>
+                        
+                    </table>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

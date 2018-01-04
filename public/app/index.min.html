@@ -1,0 +1,27 @@
+<!DOCTYPE html><html ng-app="Myproject" lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Myproject</title><link rel="stylesheet prefetch" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900"><link rel="stylesheet prefetch" href="//fonts.googleapis.com/css?family=Montserrat:400,700"><link href="/css/bootstrap.min.css" rel="stylesheet" id="bootstrapcss"><noscript id="deferred-styles"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="css/allstyle.min.css?v=8"></noscript><script>var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);</script><link sizes="16x16" href="images/favicon-16x16.png" type="image/png" rel="icon"></head><noscript><style type="text/css">.pagecontainer {display:none;}</style><div class="noscriptmsg">JavaScript is disabled. To access site, kindly enable JavaScript.</div></noscript><script>function checkCookie() {
+                    var cookieEnabled = navigator.cookieEnabled;
+                    if (!cookieEnabled) {
+                        document.cookie = "testcookie";
+                        cookieEnabled = document.cookie.indexOf("testcookie") != -1;
+                    }
+                    return cookieEnabled || showCookieFail();
+                }
+
+                function showCookieFail() {
+                    alert('Cookie is disabled.  To access site, kindly enable Cookie.')
+                    // do something here
+                }
+
+
+                // within a window load,dom ready or something like that place your:
+                checkCookie();</script><body class="ng-cloak" ng-class="{'chatDisp':$root.chatbox}"><div class="wrapper width100"><div ng-show="$root.routeLoader" class="loading-img-fullscreen"><img class="rotate-img" src="images/loadingimg.png"> <span class="loading-msg">Loading...</span></div><div ng-if="globals.currentUser && globals.currentUser.is_eulaaccepted" navigation-bar navigation-detail="navigationDetail"></div><div notifications="top right"></div><div ng-view></div><footer ng-controller="FooterController" ng-show="display && !$root.routeLoader"><div class="footer-bottom clearfix" ng-include="'/modules/templates/footer.min.html'"></div></footer><script src="scripts/vendorimp.min.js?v=8"></script><script src="scripts/vendor.min.js?v=8"></script><script src="scripts/all.min.js?v=8"></script></div></body></html>

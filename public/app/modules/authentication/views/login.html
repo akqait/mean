@@ -1,0 +1,42 @@
+
+<script src="https://www.google.com/recaptcha/api.js" > </script>
+
+<style>.mt5{margin-top: 5px !important;}.white{color: #fff !important;}.mt20{margin-top: 20px;}.btn-wd{margin-left:15px;margin-bottom:10px;width:30% !important;line-height:.428571;padding:13px 12px}.btn-wd:hover{color:white}.agreement span{font-size:14px;}.form-agreement{max-height:240px !important}.white{color: #fff !important;}.container,.form{z-index:1;max-width:300px}*,:after,:before{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}.form{padding:30px;background:rgba(0,0,0,.4);max-height:350px;position:absolute;top:25vh;right:0;left:0;margin:auto;border-radius:3px}.form .thumbnail{background:#EF3B3A;width:150px;height:150px;margin:0 auto 30px;padding:50px 30px;box-sizing:border-box;border-radius:100%}.form button,.form input{outline:0;padding:15px;font-size:14px}.form .thumbnail img{display:block;width:100%}.form input{background:#f2f2f2;width:100%;border:0;margin:0 0 15px;box-sizing:border-box;border-radius:3px}.form button{background:rgba(158,201,87,.85);width:90%;border:0;color:#FFF;-webkit-transition:all .3 ease;transition:all .3 ease;cursor:pointer;border-radius:3px}.form .message{margin:15px 0 0;color:#fff;font-size:12px}.form .message a{color:#B3DB71;text-decoration:none;cursor:pointer}.form .register-form{display:none}.container:after,.container:before,body:before{content:"";display:block}.container{position:relative;margin:0 auto}.container:after,.container:before{clear:both}.container .info{margin:50px auto;text-align:center}.container .info h1{margin:0 0 15px;padding:0;font-size:36px;font-weight:300;color:#1a1a1a}.container .info span{color:#4d4d4d;font-size:12px}.container .info span a{color:#000;text-decoration:none}.container .info span .fa{color:#EF3B3A}body{ center center no-repeat fixed;font-family:Roboto,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-size:cover; min-height:600px; height: auto}body:before{position:fixed;top:0;left:0;background:rgba(0,0,0,.2);width:100%;height:100%}.error-msg{color:#a94442}.loginErrorMsg{color:#fff;padding:1px 0;border:1px solid #CC2C2E;margin:0 0 5px;background:rgba(204,44,46,.27);visibility:hidden;}.SignupForm{max-width:450px;max-height:425px}.SignupForm form input{margin:0 0 7px}.SignupForm form button{width:93%}.SignupForm .Eltwo{width:49.6%}.error-msg-forgot{color:#CC2C2E;padding:5px;margin:0 14px 7px}.message-pwd{font-size:15px;margin-bottom:20px}.fpwd-btn button,.fpwd-email input{outline:0;padding:15px;font-size:14px}.fpwd-email input{width:100%;border:1px solid #e5e5e5;margin:0 0 15px;box-sizing:border-box;border-radius:3px; height: auto}.fpwd-btn button{background:rgba(158,201,87,.85);width:90%;border:0;color:#FFF;-webkit-transition:all .3 ease;transition:all .3 ease;cursor:pointer;border-radius:3px}#modal-title{text-align:left;color:#333;font-family:Montserrat,sans-serif;font-size:20px}@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .form{width:300px;}}.login-form .copyright{color:#fff; margin-top: 6px;font-size: 13px;text-align: center;} body{font-size:13px;text-align:center;line-height:1.5;position:relative} </style>
+<div class="container">
+
+</div>
+
+<div class="form" ng-class="{'form-agreement': $root.is_eulaaccepted !== 1}">
+   
+    <form class="login-form" ng-show="$root.is_eulaaccepted === 1" ng-submit="login()" role="form" name="form" novalidate>
+        <div class="error-msg"> 
+       
+           <p class="loginErrorMsg" style="display: block !important" ng-show="error || (formValidation && form.username.$error.required) || (form.username.$touched && form.username.$error.required) || (formValidation && form.password.$error.required) || ( form.password.$touched && form.password.$error.required)" ng-style="{'visibility': error || (formValidation && form.username.$error.required) ||(form.username.$touched && form.username.$error.required) || (formValidation && form.password.$error.required) ||  (form.password.$touched && form.password.$error.required) ?'visible':'hidden'}">{{error||' Email address and password are required'}} </p>
+      
+        </div>
+        <input type="username" ng-blur="error=false" placeholder="Email address" name="username" ng-class="{ 'has-error' : form.username.$invalid }" id="username" ng-model="username" required=""/>
+        <input type="password" ng-blur="error=false"  placeholder="Password" name="password" ng-class="{ 'has-error' : form.password.$invalid }" id="password" ng-model="password" required=""/>
+        <div id="captcha" ></div>
+<button id="buttonlogin" ng-disabled="dataLoading">Login</button>
+<p class="message text-center"> <a ng-click="forgotpwd()">Forgot username/password?</a></p>
+    </form>
+    <div ng-show="$root.is_eulaaccepted === 0" class="agreement mt20">
+        <span class="white mt10">I agree to terms and conditions </span>
+        <div class="row form-group mt20">
+            <div class="col-sm-11">
+                <button ng-click="acceptEula()" class="btn btn-wd">Yes I agree</button>
+                <button class="btn btn-wd" ng-click="logout()">No I don't</button>
+            </div>
+        </div>
+    </div>
+     <div class="message mt5"><a ng-href="#app/userregister">New User? Register Here</a></div>
+    <div class="copyright white" >
+        © {{currentYear}} <a class="white" href="#">MyProject</a>. All Rights Reserved
+    </div>
+   
+    <div class="clearfix"></div>
+
+</div>
+<script type="text/javascript">var verifyCallback=function(e){document.getElementById("googlecaptcha").remove(),document.getElementById("buttonlogin").disabled=!1,document.getElementById("buttonlogin").style.display="block"},onloadCallback=function(){document.getElementById("buttonlogin").style.display="none",document.getElementById("buttonlogin").disabled=!0,grecaptcha.render("googlecaptcha",{sitekey:"yourkey",callback:verifyCallback,theme:"dark"})};</script>
+
+   

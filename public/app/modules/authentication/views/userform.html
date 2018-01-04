@@ -1,0 +1,57 @@
+
+<!--
+  <form class="register-form">
+    <input type="text" placeholder="name"/>
+    <input type="password" placeholder="password"/>
+    <input type="text" placeholder="email address"/>
+    <button>create</button>
+    <p class="message">Already registered? <a href="#">Sign In</a></p>
+  </form>
+-->
+
+<div class="error-msg row"> 
+    <p class="loginErrorMsg" 
+       ng-show="(form.firstname.$touched && form.firstname.$error.required) ||error" 
+       ng-style="{'visibility': (form.firstname.$touched && form.firstname.$error.required) ||error?'visible':'hidden'}">{{error||'First name is required'}} </p>
+    
+    <p class="loginErrorMsg" 
+       ng-show="(form.lastname.$touched && form.lastname.$error.required)" 
+       ng-style="{'visibility': (form.lastname.$touched && form.lastname.$error.required)?'visible':'hidden'}">{{'Last name is required'}} </p>
+    
+    <p class="loginErrorMsg" 
+       ng-show="(form.username.$touched && form.username.$error.required)" 
+       ng-style="{'visibility': (form.username.$touched && form.username.$error.required)?'visible':'hidden'}">{{'Username is required'}} </p>
+    
+    
+    <p class="loginErrorMsg" 
+       ng-show="(form.password.$touched && form.password.$error.required)" 
+       ng-style="{'visibility': (form.password.$touched && form.password.$error.required)?'visible':'hidden'}">{{'Password is required'}} </p>
+      
+    <p class="loginErrorMsg" 
+       ng-show="(form.password.$touched && (form.password.$error.minlength || form.password.$error.pattern))" 
+       ng-style="{'visibility': (form.password.$touched && (form.password.$error.minlength || form.password.$error.pattern))?'visible':'hidden'}">{{'Must be 8 characters and contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.)'}} </p>
+      
+    <p class="loginErrorMsg" 
+       ng-show="(form.confirmpassword.$touched && form.confirmpassword.$error.required)" 
+       ng-style="{'visibility': (form.confirmpassword.$touched && form.confirmpassword.$error.required)?'visible':'hidden'}">{{'Confirm password is required'}} </p>
+      
+    <p class="loginErrorMsg" 
+       ng-show="(form.confirmpassword.$touched && form.confirmpassword.$viewValue!='' && form.confirmpassword.$viewValue !==form.password.$viewValue)" 
+       ng-style="{'visibility': (form.confirmpassword.$touched && form.confirmpassword.$viewValue!='' && form.confirmpassword.$viewValue!==form.password.$viewValue)?'visible':'hidden'}">{{'Password mismatch'}} </p>
+      
+    <p class="loginErrorMsg" 
+       ng-show="(form.username.$error.email || form.$error.email)" 
+       ng-style="{'visibility': (form.username.$error.email || form.$error.email )?'visible':'hidden'}">{{'Not valid email'}} </p>
+    
+</div>
+<form class="login-form " ng-submit="callFormFunc(form)" role="form" name="form" novalidate>
+    <input type="text" placeholder="First Name" name="firstname" id="firstname" ng-model="signUpData.firstname" required="" class="Elsignup" capitalize-first/>
+    <input type="text" placeholder="Middle Name" name="middlename" id="middlename" ng-model="signUpData.middlename" class="Elsignup" capitalize-first/>
+    <input type="text" placeholder="Last Name" name="lastname" id="lastname" ng-model="signUpData.lastname" required="" class="Elsignup" capitalize-first/>
+    <input type="email" placeholder="Username/Email" name="username" ng-class="{ 'has-error' : form.username.$invalid }" ng-disabled="true" id="username" ng-model="signUpData.username" required=""/>
+    <input type="text" placeholder="Contact Phone Number" maxlength="20" name="contactno"  id="contactno" ng-model="signUpData.contactno" />
+    <input type="password" placeholder="Password" name="password" id="password" ng-model="signUpData.password" ng-minlength="8" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required class="Elbottomsignup"/>
+    <input type="password" placeholder="Confirm Password" name="confirmpassword" id="confirmpassword" ng-model="signUpData.password_c" required="" class="Elbottomsignup"/>
+    <button id="buttonsubmit" ng-disabled="form.$touched && (form.$invalid || dataLoading || form.confirmpassword.$viewValue!==form.password.$viewValue)">Submit</button>
+    <div class="clearfix"></div>
+</form>

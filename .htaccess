@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^http://localhost:3000/.*$ [NC]
+RewriteCond %{HTTP_REFERER} !^http://localhost:3000$ [NC]
+RewriteRule .*\.(wav|swf|jpg|jpeg|gif|png|bmp|js|css)$ - [F,NC,L]
