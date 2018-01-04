@@ -23,5 +23,5 @@ https://nodejs.org/en/
 npm install -g gulp
 ## install dependencies
 npm install
-
-
+## start app
+gulp
