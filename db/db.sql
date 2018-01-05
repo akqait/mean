@@ -1,3 +1,4 @@
+-- -database structure you can use your database name
 create database `mydb`;
 use mydb;
 CREATE TABLE `dc_user` (
